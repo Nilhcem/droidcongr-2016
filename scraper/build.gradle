@@ -1,20 +1,18 @@
-group 'com.nilhcem.droidconde'
+group 'com.nilhcem.droidcongr'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = 'com.nilhcem.droidconde.scraper.AppKt'
-
-defaultTasks 'run'
+mainClassName = 'com.nilhcem.droidcongr.scraper.AppKt'
 
 buildscript {
-    ext.kotlinVersion = '1.0.2'
+    ext.kotlin_version = '1.0.2'
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -22,8 +20,12 @@ sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.squareup.moshi:moshi:1.2.0'
     compile 'org.jsoup:jsoup:1.9.2'
 }

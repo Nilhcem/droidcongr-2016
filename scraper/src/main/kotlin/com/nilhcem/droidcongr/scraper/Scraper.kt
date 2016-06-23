@@ -5,107 +5,93 @@ import com.nilhcem.droidcongr.scraper.model.Session
 import com.nilhcem.droidcongr.scraper.model.Speaker
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
 import org.jsoup.safety.Whitelist
 import org.jsoup.select.Elements
-import java.util.concurrent.TimeUnit
 import kotlin.text.RegexOption.IGNORE_CASE
 
 class Scraper {
 
+    val speakers = mutableListOf<Speaker>()
+    val sessions = mutableListOf<Session>()
+
     companion object {
-        val BASE_URL = "http://droidcon.de"
-        val SPEAKERS_URL = "$BASE_URL/en/program/speaker"
-        val SLOT_TIME_REGEX = """(\d{2})/(\d{2})/(\d{4}) - (\d{2}):(\d{2}) to (\d{2}):(\d{2})""".toRegex()
+        val BASE_URL = "http://2016.droidcon.gr/speakers/"
     }
 
-    fun getSpeakers(): List<Speaker> {
-        println("Get speakers")
-        return jsoup(SPEAKERS_URL).select("div.view-content .views-row")
+    init {
+        println("Start scraping")
+        val urlImgs = jsoup(BASE_URL)
+                .select(".w-portfolio-list .w-portfolio-item")
                 .map {
-                    it.select(".views-field-field-profile-last-name .field-content a").attr("href")
+                    val url = it.select("a").attr("href")
+                    val speakerImg = it.select("img").attr("src")
+                    UrlImg(url, speakerImg)
                 }
+                .filter { it.url != "http://2016.droidcon.gr/speakers/uploading/" }
                 .distinct()
-                .mapIndexed { index, url ->
-                    println("Get speaker: #" + Integer.toString(index) + " - url: " + url)
-                    with (jsoup(url).select("#main-content")) {
-                        val name = select("#main-content-header h1").fmtText()
-                        val photo = select(".image-style-profile-default").attr("src").replace(Regex("\\?itok=.*$"), "")
-                        val bio = select(".views-field-field-profile-vita div").fmtText()
-                        val job = select(".views-field-field-profile-job-title div").fmtText()
-                        val company = select(".views-field-field-profile-organization div a").fmtText()
-                        val links = select(".views-field-field-profile-links a").map { it.attr("href") }
-                        val sessions = select(".view-ncms-speaker-sessions-current a").map { it.attr("href") }
+                .sortedBy { it.url }
 
-                        val title = getSpeakerTitle(job, company)
-                        val twitterUrl = links.filter { it.contains("twitter.com/", true) }.firstOrNull()
-                        val twitterHandle = getHandleFromUrl(twitterUrl)
-                        val githubUrl = links.filter { it.contains("github.com/", true) }.firstOrNull()
-                        val githubHandle = getHandleFromUrl(githubUrl)
-                        val website = links.filter { !it.equals(twitterUrl) && !it.equals(githubUrl) }.firstOrNull()
-
-                        Speaker(index + 1, name, title, photo, bio, website, twitterHandle, githubHandle, sessions)
-                    }
-                }
-    }
-
-    private fun getSpeakerTitle(job: String, company: String): String? {
-        val sb = StringBuilder()
-        if (!job.isEmpty()) {
-            sb.append(job)
-        }
-        if (!company.isEmpty()) {
-            if (!sb.isEmpty()) {
-                sb.append(" @ ")
+        urlImgs.forEachIndexed { index, urlImg ->
+            println("Get speaker: #$index - url: ${urlImg.url}")
+            with(jsoup(urlImg.url).body()) {
+                speakers.add(parseSpeaker(index, urlImg.img, this))
+                sessions.addAll(parseSessions(index, sessions.size, this))
             }
-            sb.append(company)
-        }
-
-        if (sb.isEmpty()) {
-            return null
-        } else {
-            return sb.toString()
         }
     }
 
-    fun getSessions(speakers: List<Speaker>): List<Session> {
-        println("Get sessions")
-        return speakers
-                .flatMap { it.sessions }
-                .distinct()
-                .mapIndexed { index, url ->
-                    val fullUrl = "$BASE_URL$url"
-                    println("Get session: #" + Integer.toString(index) + " - url: " + fullUrl)
-                    with(jsoup(fullUrl).select(".block-content")) {
-                        val title = select(".node-header h1 a").fmtText()
-                        val description = select(".field-name-field-session-description .field-items").fmtText()
-                        val roomId = Room.getRoomId(select(".field-name-field-session-room").text())
-                        val dateRange = select(".field-name-field-session-datetime").text()
+    private fun parseSpeaker(id: Int, photo: String, element: Element): Speaker {
+        with (element) {
+            val name = select(".l-titlebar-content h1").fmtText()
+            val title = select(".l-titlebar-content p").fmtText()
 
-                        val speakersId = speakers
-                                .filter { it.sessions.contains(url) }
-                                .map { it.id }
-                        val startAt = getStartAt(dateRange)
-                        val duration = getDuration(dateRange)
+            val section = select(".w-tabs-sections-h .w-tabs-section")[0]
+            val bio = section.select(".wpb_text_column .wpb_wrapper p").fmtText()
+            val website = section.select(".w-socials-list .custom a").attr("href")
+            val twitter = section.select(".w-socials-list .twitter a").attr("href")
+            val google = section.select(".w-socials-list .google a").attr("href")
+            val github = section.select(".w-socials-list .github a").attr("href")
 
-                        Session(index + 1, title, description, speakersId, startAt, duration, roomId)
-                    }
+            return Speaker(
+                    id + 1, name, title, photo, bio,
+                    if (website.length == 0) (if (google.length == 0) null else google) else website,
+                    getHandleFromUrl(twitter),
+                    getHandleFromUrl(github)
+            )
+        }
+    }
+
+    private fun parseSessions(speakerId: Int, startId: Int, element: Element): List<Session> {
+        with (element) {
+            val sections = select(".w-tabs-sections-h .w-tabs-section")
+            val nbSessions = sections[1].select(".wpb_wrapper h4").size
+
+            return (0..nbSessions - 1).map { i ->
+                val id = startId + i + 1
+                val title = sections[1].select(".wpb_wrapper h4")[i].fmtText()
+                val description = if (nbSessions == 1) {
+                    sections[2].select(".wpb_wrapper").fmtText()
+                } else {
+                    sections[2].select(".wpb_wrapper p")[i].fmtText()
                 }
+                val speakersId = listOf(speakerId + 1)
+                val duration = sections[3].select(".w-tabs-section-content-h .g-cols")[i]
+                        .select(".one-quarter")[2].select("h4").fmtText().replace("~", "")
+                        .replace(" minutes", "").replace("30-40", "40").toInt()
+
+                Session(id, title, description, speakersId, "2016-07-07 10:00", duration, Room.HALL_A.id)
+            }.toList()
+        }
     }
 
-    private fun getStartAt(dateRange: String): String? {
-        val values = SLOT_TIME_REGEX.matchEntire(dateRange)?.groupValues?.subList(1, 6)
-        if (values != null && values.size == 5) {
-            return "${values[2]}-${values[0]}-${values[1]} ${values[3]}:${values[4]}"
+    private fun getHandleFromUrl(url: String?): String? {
+        if (url == null || url.length == 0) {
+            return null
         }
-        return null
-    }
 
-    private fun getDuration(dateRange: String): Int {
-        val values = SLOT_TIME_REGEX.matchEntire(dateRange)?.groupValues?.subList(4, 8)?.map { it.toLong() }
-        if (values != null && values.size == 4) {
-            return ((TimeUnit.HOURS.toMinutes(values[2]) + values[3]) - (TimeUnit.HOURS.toMinutes(values[0]) + values[1])).toInt()
-        }
-        return 0
+        val urlWithoutLastSlash = if (url.last() == '/') url.substring(0, url.length - 1) else url
+        return urlWithoutLastSlash.substring(urlWithoutLastSlash.lastIndexOf("/") + 1)
     }
 
     private fun jsoup(url: String, nbRetries: Int = 3): Document {
@@ -122,29 +108,22 @@ class Scraper {
         throw IllegalStateException("This should not happen")
     }
 
-    private fun Elements.fmtText(): String {
-        return Jsoup.clean(html(), "", Whitelist.basic(),
-                Document.OutputSettings().prettyPrint(false))
-                .replace(Regex("&nbsp;", IGNORE_CASE), " ")
-                .replace(Regex("&amp;", IGNORE_CASE), "&")
-                .replace(Regex("&gt;", IGNORE_CASE), ">").replace(Regex("&lt;", IGNORE_CASE), "<")
-                .replace(Regex("<br[\\s/]*>", IGNORE_CASE), "\n")
-                .replace(Regex("<p>", IGNORE_CASE), "").replace(Regex("</p>", IGNORE_CASE), "\n")
-                .replace(Regex("</?ul>", IGNORE_CASE), "")
-                .replace(Regex("<li>", IGNORE_CASE), "• ").replace(Regex("</li>", IGNORE_CASE), "\n")
-                .replace(Regex("\n\n• ", IGNORE_CASE), "\n• ")
-                .replace(Regex("<a\\s[^>]*>", IGNORE_CASE), "").replace(Regex("</a>", IGNORE_CASE), "")
-                .replace(Regex("</?strong>", IGNORE_CASE), "")
-                .replace(Regex("</?em>", IGNORE_CASE), "")
-                .replace(Regex("\\s*\n\\s*"), "\n").replace(Regex("^\n"), "").replace(Regex("\n$"), "")
-    }
+    private fun Element.fmtText() = formatText(html())
+    private fun Elements.fmtText() = formatText(html())
+    private fun formatText(html: String) = Jsoup.clean(html, "", Whitelist.basic(),
+            Document.OutputSettings().prettyPrint(false))
+            .replace(Regex("&nbsp;", IGNORE_CASE), " ")
+            .replace(Regex("&amp;", IGNORE_CASE), "&")
+            .replace(Regex("&gt;", IGNORE_CASE), ">").replace(Regex("&lt;", IGNORE_CASE), "<")
+            .replace(Regex("<br[\\s/]*>", IGNORE_CASE), "\n")
+            .replace(Regex("<p>", IGNORE_CASE), "").replace(Regex("</p>", IGNORE_CASE), "\n")
+            .replace(Regex("</?ul>", IGNORE_CASE), "")
+            .replace(Regex("<li>", IGNORE_CASE), "• ").replace(Regex("</li>", IGNORE_CASE), "\n")
+            .replace(Regex("\n\n• ", IGNORE_CASE), "\n• ")
+            .replace(Regex("<a\\s[^>]*>", IGNORE_CASE), "").replace(Regex("</a>", IGNORE_CASE), "")
+            .replace(Regex("</?strong>", IGNORE_CASE), "")
+            .replace(Regex("</?em>", IGNORE_CASE), "")
+            .replace(Regex("\\s*\n\\s*"), "\n").replace(Regex("^\n"), "").replace(Regex("\n$"), "")
 
-    private fun getHandleFromUrl(url: String?): String? {
-        if (url == null) {
-            return null
-        }
-
-        val urlWithoutLastSlash = if (url.last() == '/') url.substring(0, url.length - 1) else url
-        return urlWithoutLastSlash.substring(urlWithoutLastSlash.lastIndexOf("/") + 1)
-    }
+    data class UrlImg(val url: String, val img: String)
 }

@@ -8,11 +8,9 @@ import com.squareup.moshi.Types
 import java.io.File
 
 fun main(args: Array<String>) {
-    val scraper = Scraper()
-    val speakers = scraper.getSpeakers()
-    val sessions = scraper.getSessions(speakers)
-
-    createJsons(speakers, sessions)
+    with (Scraper()) {
+        createJsons(speakers, sessions)
+    }
 }
 
 fun createJsons(speakers: List<Speaker>, sessions: List<Session>) {
