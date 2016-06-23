@@ -20,4 +20,4 @@
 -keepattributes SourceFile,LineNumberTable
 
 # Keep the BuildConfig
--keep class com.nilhcem.droidconde.BuildConfig { *; }
+-keep class com.nilhcem.droidcongr.BuildConfig { *; }
