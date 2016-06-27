@@ -20,7 +20,8 @@ public class ZoomableImageActivity extends BaseActivity<ZoomableImageActivity.Zo
         ZoomableImageActivityIntentBuilder.inject(getIntent(), this);
         PhotoView view = new PhotoView(this);
 
-        view.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.venue_rooms));
+        // No drawable-nodpi venue_rooms file
+        // view.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.venue_rooms));
         view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
         getSupportActionBar().setTitle(R.string.venue_see_rooms);
         setContentView(view);
