@@ -1,6 +1,9 @@
 # Droidcon Greece 2016 Conference App
 
-Sample app for the "2016 Android Developer Toolbox" talk at droidconGR
+Sample app for the "2016 Android Developer Toolbox" talk at droidcon Thessaloniki 2016
+
+[<img src="https://dply.me/so2000/button/large" alt="Try it on your device via DeployGate">](https://dply.me/so2000#install)
+
 
 ## Features
 
