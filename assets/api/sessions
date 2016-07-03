@@ -3,13 +3,13 @@
 	"id": 1,
 	"roomId": 0,
 	"startAt": "2016-07-08 08:30",
-	"title": "Breakfast & Registration"
+	"title": "Check in and badge pick-up"
 }, {
 	"duration": 15,
 	"id": 2,
 	"roomId": 0,
 	"startAt": "2016-07-08 09:45",
-	"title": "Opening remarks"
+	"title": "Opening remarks (auditorium)"
 }, {
 	"description": "We humans have indeed always been adept at dovetailing our minds and skills to the shape of our current tools and aids. But when those tools and aids start dovetailing back , when our technologies actively, automatically, and continually tailor themselves to us, just as we do to them ,then the line between tool and user becomes flimsy indeed.",
 	"duration": 30,
@@ -18,7 +18,7 @@
 	"speakersId": [9],
 	"startAt": "2016-07-08 10:00",
 	"title": "The Internet of Things – Going beyond mind’s limits through technologies."
-	}, {
+}, {
 	"description": "One of the most common errors when starting to develop wearable apps is to try to replicate the functionality of your handset on a wearable. It’s important to keep in mind that wearable apps should be quite small in size and functionality. They are a complement for your phone and we must develop our apps keeping this premise. In this talk I’ll explain the process followed to develop a wearable remote control, covering some basic aspects of the communication between the phone and the wearable.",
 	"duration": 30,
 	"id": 4,
@@ -55,7 +55,7 @@
 	"roomId": 1,
 	"speakersId": [5],
 	"startAt": "2016-07-08 15:45",
-	"title": "Best practices in building mobile SDKs"
+	"title": "Some pain points in building Android Libraries"
 }, {
 	"description": "In this talk we will learn how to make code meant to be used and maintained by others in an open source community. We will focus on some of the most important aspects of public coding while creating a new Android library.\nIf you still have issues designing your API to make it easy and extensible or just want to learn how to deal with library version numbers and manage a public version control system (VCS) you are welcome to join us in this adventure.",
 	"duration": 30,
@@ -71,7 +71,7 @@
 	"roomId": 1,
 	"speakersId": [15],
 	"startAt": "2016-07-08 17:15",
-	"title": "I've been doing some syncing…"
+	"title": "Account and Sync and all that Jazz"
 }, {
 	"description": "If you’ve ever glanced at Spotify’s release notes, you’ll find them quite underwhelming.  No announcements of super awesome features, some random ramblings that may or may not be true.  Of course, we are always rolling out new features and our UI changes from day to day.  And, it’s all personalised – the UI presents what’s relevant to you and some of you might even be lucky enough to receive new features before we roll it out to everyone.\nWe use two major backend components to control this.  First, we have an ab testing framework that we can use to rollout features to random subsets of users, grouped by region, platform and client version.  Second, we have a sophisticated UI content framework that accepts JSON data to render certain pages throughout the app with the latest and most relevant data for that user.  Multiple backends can provide the content and the clients interpret the data and render it in a consistent way natively.",
 	"duration": 45,
@@ -105,21 +105,15 @@
 	"startAt": "2016-07-08 19:45",
 	"title": "Firebase & RxJava on Android"
 }, {
-	"duration": 15,
+	"duration": 60,
 	"id": 15,
 	"roomId": 0,
-	"startAt": "2016-07-08 20:15",
-	"title": "Closing Remarks"
-}, {
-	"duration": 60,
-	"id": 16,
-	"roomId": 0,
 	"startAt": "2016-07-09 09:00",
-	"title": "Breakfast & Registration"
+	"title": "Check in and badge pick-up"
 }, {
 	"description": "Android High Performance will start you thinking about how to wring the most from any hardware your app is installed on, so you can increase your reach and engagement. This talk will provide an introduction to state-of-the-art Android techniques and the importance of performance in an Android application. Then, it will be explained the Android SDK tools regularly used to debug and profile Android applications. We will also learn about some advanced topics such as building layouts, multithreading, networking, and security. Battery life is one of the biggest bottleneck in applications; so we will show typical examples of code that exhausts battery life, how to prevent this, and how to measure battery consumption from an application in every kind of situation.",
 	"duration": 40,
-	"id": 17,
+	"id": 16,
 	"roomId": 1,
 	"speakersId": [6],
 	"startAt": "2016-07-09 10:00",
@@ -127,7 +121,7 @@
 }, {
 	"description": "At Badoo, where our mission is to connect people, chat is a really big deal. So when the time came to create a brand new messaging experience, we of course wanted to use the best tools and ideas available.\nIn the past we’ve experimented with both Clean Architecture and RxJava but this is the story of how we combined that with our existing Model-View-Presenter based approach to create and awesome (Open Source of course: https://goo.gl/i39Ufd) framework that provides full client side chat integration.\nAlong the way we learned some valuable lessons and found answers to some tricky questions:\nWhere to draw the line when using RxJava?\nHow to implement efficient multi-level caching with error recovery using RxJava?\nWhat is Clean Architecture really, and when does it stop being clean?\nand much more!\nNow we want to share our experience with our fellow developers, to hopefully inspire you to create something awesome :)",
 	"duration": 35,
-	"id": 18,
+	"id": 17,
 	"roomId": 1,
 	"speakersId": [7],
 	"startAt": "2016-07-09 10:45",
@@ -135,7 +129,7 @@
 }, {
 	"description": "The Android app ecosystem is evolving every day and developers are seeking better tools and libraries to help them create apps that will stand out in the overcrowded marketplace. Third-party SDKs appear every day promising to aid this process, instead they bring friction and integration challenges – is it worth the effort? More often the answer is no, as many of them need a significant amount of effort to become embedded in an app. Building SDKs for seamless integration is a challenge, especially when you have to deal on the view level. So how do we attack the two-minute integration challenge?\nIn this session we will discuss a set of good practices on how to build a well-structured SDK focusing on the view level. We will take a deep-dive into the different options available for rendering overlays on Android – particularly through an SDK – highlighting capabilities and limitations of each approach. Over the course of the session we will explore the various technical decisions an SDK developer has to make to overcome platform limitations, focusing on how to provide a minimalistic interaction with the SDK users, while still keeping the full functionality of the SDK under the hood.",
 	"duration": 35,
-	"id": 19,
+	"id": 18,
 	"roomId": 1,
 	"speakersId": [1],
 	"startAt": "2016-07-09 11:30",
@@ -143,29 +137,29 @@
 }, {
 	"description": "This presentation will cover:\n• general concept of MVVM and Android Databinding\n• why they should be used together\n• how using these technologies reflects to the app architecture\n• code snippets from practice\n• disadvantages, cases when it shouldn’t be used and alternatives",
 	"duration": 40,
-	"id": 20,
+	"id": 19,
 	"roomId": 1,
 	"speakersId": [14],
 	"startAt": "2016-07-09 12:15",
 	"title": "MVVM and Android databinding in practice"
 }, {
 	"duration": 120,
-	"id": 21,
+	"id": 20,
 	"roomId": 0,
 	"startAt": "2016-07-09 13:00",
 	"title": "Lunch Break"
 }, {
-	"description": "Whether your app is a pet project or has millions of users, you probably need the right tools, during the development, to help you modify persisted data in real time, simulate a slow/unstable HTTP(s) connection, detect bugs as fast as possible, or create mock servers to anticipate the development of a feature.\nWe will make a demonstration of all the tools we use, in 2016, to write maintainable code and improve our productivity.",
+	"description": "A practical guide to using RxJava on Android. Tips for improving your app architecture with reactive programming. What are the advantages and disadvantages of using RxJava over standard architecture? And how to connect with other popular Android libraries?",
 	"duration": 45,
-	"id": 22,
+	"id": 21,
 	"roomId": 1,
-	"speakersId": [8],
+	"speakersId": [21],
 	"startAt": "2016-07-09 15:00",
-	"title": "The 2016 Android Developer Toolbox"
+	"title": "Practical RxJava for Android"
 }, {
 	"description": "In almost every Android app project, you use a variety of libraries. This talk covers some of the most used libraries.\nWhile developing an Android app, you rely on loads of 3rd party libraries to make your life easier. Need persistence? No problem. Need to access a REST API? No problem. Need to handle images in your app? No problem. There’s a library for almost any common task that Android developers will face. In this talk, I will show examples of some of the most common Android libraries that are out there.",
 	"duration": 45,
-	"id": 23,
+	"id": 22,
 	"roomId": 1,
 	"speakersId": [13],
 	"startAt": "2016-07-09 15:45",
@@ -173,7 +167,7 @@
 }, {
 	"description": "Test our Android applications is not an easy task. When we start writing tests most of the time we don’t know what to test and how, our code is not as testable as it should, we write tests but sometimes they are flaky or test nothing. In this talk we are going to talk about what to test an how to design a testing development pipeline. Using real production code we will show how to test our application using different approaches based on different testing strategies and frameworks or libraries like: Espresso, MockWebServer, Dagger2, JUnit, Mockito, etc.\nIf you want to learn how to design a testing development pipeline, how to test your application layers using different strategies and write tests you can trust, this is your talk.\n—–\nThe presentation is not based on a project but there are some code examples extracted from these repositories:\nhttps://github.com/pedrovgs/AndroidGameBoyEmulator/\nhttps://github.com/Karumi/KataTODOApiClientJava\nhttps://github.com/Karumi/KataSuperHeroesAndroid",
 	"duration": 60,
-	"id": 24,
+	"id": 23,
 	"roomId": 1,
 	"speakersId": [16],
 	"startAt": "2016-07-09 16:30",
@@ -181,7 +175,7 @@
 }, {
 	"description": "Google has recently released a preview version of Android N, and brand new Java 8 features appeared around. They gave us a sneak peak about the future of Android development. In this talk we are going to showcase all the supported new language features up to date, detailing which ones are retrocompatible and which ones will just be available starting on API 24 (N). We will get our hands on a Clean Architecture sample project which will use java 8 functionalities on its different layers, in order to make people think a little bit more about how those new language features can become handy for us to simplify our code and project architecture.",
 	"duration": 45,
-	"id": 25,
+	"id": 24,
 	"roomId": 1,
 	"speakersId": [11],
 	"startAt": "2016-07-09 17:30",
@@ -189,34 +183,34 @@
 }, {
 	"description": "With Google Play Services Version 7.8, which was released in August 2015, Google introduced the Nearby API.\nThis API makes use of an array of technologies like Wifi, Bluetooth, Beacons and even Audio to communicate with nearby objects like Bus Stops, Train platforms or even Indoor Locations like a museum.\nThere are a lot of possibilities for using the Nearby API, for example creating a Local Multiplayer game where people which are physically next to each other can join a game without the need of an internet connection. Or a smart bus stop that might tell you that your next bus is delayed by 10 minutes due to an accident and therefor provides you with some interesting articles to spend your time wisely while waiting. The use cases are almost endless.\nThe audience will get a quick overview about the Nearby API and get an understanding of how it functions and what can be done with the Nearby API.\nThis talk will touch the Nearby Messages API, the Nearby Locations API and the (eddystone) beacon technology.",
 	"duration": 40,
-	"id": 26,
+	"id": 25,
 	"roomId": 1,
 	"speakersId": [17],
 	"startAt": "2016-07-09 18:15",
 	"title": "Nearby API – I'm lost, let's see what's nearby!"
 }, {
-	"description": "A practical guide to using RxJava on Android. Tips for improving your app architecture with reactive programming. What are the advantages and disadvantages of using RxJava over standard architecture? And how to connect with other popular Android libraries?",
+	"description": "Whether your app is a pet project or has millions of users, you probably need the right tools, during the development, to help you modify persisted data in real time, simulate a slow/unstable HTTP(s) connection, detect bugs as fast as possible, or create mock servers to anticipate the development of a feature.\nWe will make a demonstration of all the tools we use, in 2016, to write maintainable code and improve our productivity.",
 	"duration": 45,
-	"id": 27,
+	"id": 26,
 	"roomId": 1,
-	"speakersId": [21],
+	"speakersId": [8],
 	"startAt": "2016-07-09 19:00",
-	"title": "Practical RxJava for Android"
+	"title": "The 2016 Android Developer Toolbox"
+}, {
+	"duration": 30,
+	"id": 27,
+	"roomId": 0,
+	"startAt": "2016-07-09 19:45",
+	"title": "Live Demo Hangout with San Francisco | Speechless (Auditorium)"
 }, {
 	"duration": 30,
 	"id": 28,
 	"roomId": 0,
-	"startAt": "2016-07-09 19:45",
-	"title": "Speechless"
-}, {
-	"duration": 30,
-	"id": 29,
-	"roomId": 0,
 	"startAt": "2016-07-09 20:15",
-	"title": "Democamp"
+	"title": "Turnand | Democamp (Auditorium)"
 }, {
 	"duration": 15,
-	"id": 30,
+	"id": 29,
 	"roomId": 0,
 	"startAt": "2016-07-09 20:45",
 	"title": "Official closure"
