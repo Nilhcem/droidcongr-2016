@@ -58,7 +58,7 @@
 	"bio": "Agile thinker passionate in Kotlin, Android Development, Clean Code and Free Software",
 	"id": 8,
 	"name": "Gautier Mechling",
-	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/gautier-mechling.jpg",
+	"photo": "https://droidcon.at/img/people/GautierMechling.jpg",
 	"title": "Software Craftsman",
 	"twitter": "Nilhcem",
 	"website": "https://plus.google.com/+GautierMechling"
@@ -125,16 +125,8 @@
 	"twitter": "pedro_g_s",
 	"website": "http://www.karumi.com/"
 }, {
-	"bio": "Caner is a UX expert who is also a technology geek. Mainly focused on the design, UX and marketing of mobile applications.",
-	"id": 17,
-	"name": "R. Caner Yildirim",
-	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/06/resul-caner-yildirim.jpg",
-	"title": "Google Developers UX / UI Expert | InnovationBox",
-	"twitter": "protechman",
-	"website": "http://innovationbox.com/"
-}, {
 	"bio": "Daniel Hartwich is an aspiring Android Developer at the German company XING AG located in Hamburg. He’s interested in architecture and tests",
-	"id": 18,
+	"id": 17,
 	"name": "Daniel Hartwich",
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/DH_CONFERENCE_TRANSPARENT_300x300.jpg",
 	"title": "Android Developer | XING AG",
@@ -142,7 +134,7 @@
 	"website": "https://www.xing.com/"
 }, {
 	"bio": "Sergio is a Software Engineer at Karumi specialized on mobile development. He has been pushing for open source projects lately.",
-	"id": 19,
+	"id": 18,
 	"name": "Sergio Gutierrez",
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/sergio_gutierrez.jpg",
 	"title": "Senior Software Engineer | Karumi",
@@ -150,7 +142,7 @@
 	"website": "http://karumi.com/"
 }, {
 	"bio": "Android engineer and obsessed with clean architecture & RxJava.",
-	"id": 20,
+	"id": 19,
 	"name": "Spiros Oikonomakis",
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/Spiros_Oikonomakis.jpg",
 	"title": "Android Engineer | EZHOME",
@@ -158,14 +150,14 @@
 	"website": "https://plus.google.com/u/0/+SpirosOikonomakis/posts"
 }, {
 	"bio": "I’m a physics teacher and Indie developer from Greece, making android apps since 2011",
-	"id": 21,
+	"id": 20,
 	"name": "Thanassis Tsakiridis",
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/Thanassis_Tsakiridis.jpg",
 	"title": "Indie Developer | B4X Community",
 	"website": "https://www.b4x.com/"
 }, {
 	"bio": "Android developer. Architect of apps, libraries and SDKs at Avast. Pusher of good coding and testing practices.",
-	"id": 22,
+	"id": 21,
 	"name": "Tomas Kypta",
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/TomKypta_300px.jpg",
 	"title": "Android developer | Avast",
