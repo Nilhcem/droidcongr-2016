@@ -79,7 +79,7 @@
 	"roomId": 1,
 	"speakersId": [15],
 	"startAt": "2016-07-08 17:15",
-	"title": "Account and Sync and all that Jazz"
+	"title": "I’ve been doing some syncing…"
 }, {
 	"description": "If you’ve ever glanced at Spotify’s release notes, you’ll find them quite underwhelming.  No announcements of super awesome features, some random ramblings that may or may not be true.  Of course, we are always rolling out new features and our UI changes from day to day.  And, it’s all personalised – the UI presents what’s relevant to you and some of you might even be lucky enough to receive new features before we roll it out to everyone.\nWe use two major backend components to control this.  First, we have an ab testing framework that we can use to rollout features to random subsets of users, grouped by region, platform and client version.  Second, we have a sophisticated UI content framework that accepts JSON data to render certain pages throughout the app with the latest and most relevant data for that user.  Multiple backends can provide the content and the clients interpret the data and render it in a consistent way natively.",
 	"duration": 45,
@@ -208,14 +208,14 @@
 	"duration": 30,
 	"id": 28,
 	"roomId": 0,
-	"startAt": "2016-07-09 19:45",
-	"title": "Live Demo Hangout with San Francisco | Speechless (Auditorium)"
+	"startAt": "2016-07-09 20:15",
+	"title": "Turnand | Democamp (Auditorium)"
 }, {
 	"duration": 30,
 	"id": 29,
 	"roomId": 0,
-	"startAt": "2016-07-09 20:15",
-	"title": "Turnand | Democamp (Auditorium)"
+	"startAt": "2016-07-09 19:45",
+	"title": "Live Demo Hangout with San Francisco | Speechless (Auditorium)"
 }, {
 	"duration": 15,
 	"id": 30,
