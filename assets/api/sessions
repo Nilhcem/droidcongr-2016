@@ -1,5 +1,5 @@
 [{
-	"duration": 60,
+	"duration": 75,
 	"id": 1,
 	"roomId": 0,
 	"startAt": "2016-07-08 08:30",
@@ -9,7 +9,7 @@
 	"id": 2,
 	"roomId": 0,
 	"startAt": "2016-07-08 09:45",
-	"title": "Opening remarks (auditorium)"
+	"title": "Welcome remarks (auditorium)"
 }, {
 	"description": "We humans have indeed always been adept at dovetailing our minds and skills to the shape of our current tools and aids. But when those tools and aids start dovetailing back , when our technologies actively, automatically, and continually tailor themselves to us, just as we do to them ,then the line between tool and user becomes flimsy indeed.",
 	"duration": 30,
@@ -113,10 +113,10 @@
 	"startAt": "2016-07-08 19:45",
 	"title": "Firebase & RxJava on Android"
 }, {
-	"duration": 60,
+	"duration": 75,
 	"id": 16,
 	"roomId": 0,
-	"startAt": "2016-07-09 09:00",
+	"startAt": "2016-07-09 08:30",
 	"title": "Check in and badge pick-up"
 }, {
 	"description": "Android High Performance will start you thinking about how to wring the most from any hardware your app is installed on, so you can increase your reach and engagement. This talk will provide an introduction to state-of-the-art Android techniques and the importance of performance in an Android application. Then, it will be explained the Android SDK tools regularly used to debug and profile Android applications. We will also learn about some advanced topics such as building layouts, multithreading, networking, and security. Battery life is one of the biggest bottleneck in applications; so we will show typical examples of code that exhausts battery life, how to prevent this, and how to measure battery consumption from an application in every kind of situation.",
@@ -208,13 +208,13 @@
 	"duration": 30,
 	"id": 28,
 	"roomId": 0,
-	"startAt": "2016-07-09 20:15",
+	"startAt": "2016-07-09 20:00",
 	"title": "Turnand | Democamp (Auditorium)"
 }, {
 	"duration": 30,
 	"id": 29,
 	"roomId": 0,
-	"startAt": "2016-07-09 19:45",
+	"startAt": "2016-07-09 20:30",
 	"title": "Live Demo Hangout with San Francisco | Speechless (Auditorium)"
 }, {
 	"duration": 15,
