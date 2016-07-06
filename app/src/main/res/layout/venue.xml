@@ -33,18 +33,18 @@
                 style="@style/Venue.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/venue_postbahnhof_title"/>
+                android:text="@string/venue_title"/>
 
             <TextView
                 style="@style/Venue.Content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/venue_postbahnhof_address"/>
+                android:text="@string/venue_address"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/venue_postbahnhof_info"/>
+                android:text="@string/venue_info"/>
 
         </LinearLayout>
 
