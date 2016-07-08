@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 public enum Room {
 
     NONE(0, ""),
-    HALL_A(1, "Hall A"),
-    HALL_B(2, "Hall B");
+    HALL_A(1, "Main stage: Auditorium - First floor"),
+    HALL_B(2, "CodeLab Room: Library - First floor");
 
     public final int id;
     public final String label;
