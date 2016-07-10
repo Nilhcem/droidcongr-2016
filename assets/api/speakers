@@ -103,11 +103,13 @@
 	"twitter": "Goddchen",
 	"website": "http://www.carnectiv.com/"
 }, {
-	"bio": "Faculty of Organizational Sciences, University of Belgrade\nfew companies including gooten.com\ncurrently at drobio.com at abc-accelerator.com",
+	"bio": "Android developer. Architect of apps, libraries and SDKs at Avast. Pusher of good coding and testing practices.",
 	"id": 14,
-	"name": "Milos Kresovic",
-	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/kresovicmilos.jpg",
-	"title": "Senior Android Developer | Drobio"
+	"name": "Tomas Kypta",
+	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/TomKypta_300px.jpg",
+	"title": "Android developer | Avast",
+	"twitter": "TomasKypta",
+	"website": "https://www.avast.com/"
 }, {
 	"bio": "Cofounder & CTO of Pixplicity. Dutch-American Android master chef. Chairman of DutchAUG. Loves technology. Hates computers. Eats sushi.",
 	"id": 15,
@@ -155,12 +157,4 @@
 	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/Thanassis_Tsakiridis.jpg",
 	"title": "Indie Developer | B4X Community",
 	"website": "https://www.b4x.com/"
-}, {
-	"bio": "Android developer. Architect of apps, libraries and SDKs at Avast. Pusher of good coding and testing practices.",
-	"id": 21,
-	"name": "Tomas Kypta",
-	"photo": "http://2016.droidcon.gr/wp-content/uploads/2016/05/TomKypta_300px.jpg",
-	"title": "Android developer | Avast",
-	"twitter": "TomasKypta",
-	"website": "https://www.avast.com/"
 }]

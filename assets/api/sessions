@@ -132,7 +132,7 @@
 	"id": 18,
 	"roomId": 1,
 	"speakersId": [7],
-	"startAt": "2016-07-09 10:45",
+	"startAt": "2016-07-09 11:00",
 	"title": "Building a framework with clean architecture, RxJava and MVP"
 }, {
 	"description": "The Android app ecosystem is evolving every day and developers are seeking better tools and libraries to help them create apps that will stand out in the overcrowded marketplace. Third-party SDKs appear every day promising to aid this process, instead they bring friction and integration challenges – is it worth the effort? More often the answer is no, as many of them need a significant amount of effort to become embedded in an app. Building SDKs for seamless integration is a challenge, especially when you have to deal on the view level. So how do we attack the two-minute integration challenge?\nIn this session we will discuss a set of good practices on how to build a well-structured SDK focusing on the view level. We will take a deep-dive into the different options available for rendering overlays on Android – particularly through an SDK – highlighting capabilities and limitations of each approach. Over the course of the session we will explore the various technical decisions an SDK developer has to make to overcome platform limitations, focusing on how to provide a minimalistic interaction with the SDK users, while still keeping the full functionality of the SDK under the hood.",
@@ -140,34 +140,26 @@
 	"id": 19,
 	"roomId": 1,
 	"speakersId": [1],
-	"startAt": "2016-07-09 11:30",
+	"startAt": "2016-07-09 12:00",
 	"title": "Building overlay SDKs on Android – “The two-minute integration challenge”"
 }, {
-	"description": "This presentation will cover:\n• general concept of MVVM and Android Databinding\n• why they should be used together\n• how using these technologies reflects to the app architecture\n• code snippets from practice\n• disadvantages, cases when it shouldn’t be used and alternatives",
-	"duration": 40,
-	"id": 20,
-	"roomId": 1,
-	"speakersId": [14],
-	"startAt": "2016-07-09 12:15",
-	"title": "MVVM and Android databinding in practice"
-}, {
 	"duration": 120,
-	"id": 21,
+	"id": 20,
 	"roomId": 0,
 	"startAt": "2016-07-09 13:00",
 	"title": "Lunch Break"
 }, {
 	"description": "A practical guide to using RxJava on Android. Tips for improving your app architecture with reactive programming. What are the advantages and disadvantages of using RxJava over standard architecture? And how to connect with other popular Android libraries?",
 	"duration": 45,
-	"id": 22,
+	"id": 21,
 	"roomId": 1,
-	"speakersId": [21],
+	"speakersId": [14],
 	"startAt": "2016-07-09 15:00",
 	"title": "Practical RxJava for Android"
 }, {
 	"description": "In almost every Android app project, you use a variety of libraries. This talk covers some of the most used libraries.\nWhile developing an Android app, you rely on loads of 3rd party libraries to make your life easier. Need persistence? No problem. Need to access a REST API? No problem. Need to handle images in your app? No problem. There’s a library for almost any common task that Android developers will face. In this talk, I will show examples of some of the most common Android libraries that are out there.",
 	"duration": 45,
-	"id": 23,
+	"id": 22,
 	"roomId": 1,
 	"speakersId": [13],
 	"startAt": "2016-07-09 15:45",
@@ -175,7 +167,7 @@
 }, {
 	"description": "Test our Android applications is not an easy task. When we start writing tests most of the time we don’t know what to test and how, our code is not as testable as it should, we write tests but sometimes they are flaky or test nothing. In this talk we are going to talk about what to test an how to design a testing development pipeline. Using real production code we will show how to test our application using different approaches based on different testing strategies and frameworks or libraries like: Espresso, MockWebServer, Dagger2, JUnit, Mockito, etc.\nIf you want to learn how to design a testing development pipeline, how to test your application layers using different strategies and write tests you can trust, this is your talk.\n—–\nThe presentation is not based on a project but there are some code examples extracted from these repositories:\nhttps://github.com/pedrovgs/AndroidGameBoyEmulator/\nhttps://github.com/Karumi/KataTODOApiClientJava\nhttps://github.com/Karumi/KataSuperHeroesAndroid",
 	"duration": 60,
-	"id": 24,
+	"id": 23,
 	"roomId": 1,
 	"speakersId": [16],
 	"startAt": "2016-07-09 16:30",
@@ -183,7 +175,7 @@
 }, {
 	"description": "Google has recently released a preview version of Android N, and brand new Java 8 features appeared around. They gave us a sneak peak about the future of Android development. In this talk we are going to showcase all the supported new language features up to date, detailing which ones are retrocompatible and which ones will just be available starting on API 24 (N). We will get our hands on a Clean Architecture sample project which will use java 8 functionalities on its different layers, in order to make people think a little bit more about how those new language features can become handy for us to simplify our code and project architecture.",
 	"duration": 45,
-	"id": 25,
+	"id": 24,
 	"roomId": 1,
 	"speakersId": [11],
 	"startAt": "2016-07-09 17:30",
@@ -191,7 +183,7 @@
 }, {
 	"description": "With Google Play Services Version 7.8, which was released in August 2015, Google introduced the Nearby API.\nThis API makes use of an array of technologies like Wifi, Bluetooth, Beacons and even Audio to communicate with nearby objects like Bus Stops, Train platforms or even Indoor Locations like a museum.\nThere are a lot of possibilities for using the Nearby API, for example creating a Local Multiplayer game where people which are physically next to each other can join a game without the need of an internet connection. Or a smart bus stop that might tell you that your next bus is delayed by 10 minutes due to an accident and therefor provides you with some interesting articles to spend your time wisely while waiting. The use cases are almost endless.\nThe audience will get a quick overview about the Nearby API and get an understanding of how it functions and what can be done with the Nearby API.\nThis talk will touch the Nearby Messages API, the Nearby Locations API and the (eddystone) beacon technology.",
 	"duration": 40,
-	"id": 26,
+	"id": 25,
 	"roomId": 1,
 	"speakersId": [17],
 	"startAt": "2016-07-09 18:15",
@@ -199,26 +191,26 @@
 }, {
 	"description": "Whether your app is a pet project or has millions of users, you probably need the right tools, during the development, to help you modify persisted data in real time, simulate a slow/unstable HTTP(s) connection, detect bugs as fast as possible, or create mock servers to anticipate the development of a feature.\nWe will make a demonstration of all the tools we use, in 2016, to write maintainable code and improve our productivity.",
 	"duration": 45,
-	"id": 27,
+	"id": 26,
 	"roomId": 1,
 	"speakersId": [8],
 	"startAt": "2016-07-09 19:00",
 	"title": "The 2016 Android Developer Toolbox"
 }, {
 	"duration": 30,
-	"id": 28,
+	"id": 27,
 	"roomId": 0,
 	"startAt": "2016-07-09 20:00",
 	"title": "Turnand | Democamp (Auditorium)"
 }, {
 	"duration": 30,
-	"id": 29,
+	"id": 28,
 	"roomId": 0,
 	"startAt": "2016-07-09 20:30",
 	"title": "Live Demo Hangout with San Francisco | Speechless (Auditorium)"
 }, {
 	"duration": 15,
-	"id": 30,
+	"id": 29,
 	"roomId": 0,
 	"startAt": "2016-07-09 20:45",
 	"title": "Official closure"
